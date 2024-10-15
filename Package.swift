@@ -24,7 +24,7 @@ let package = Package(
         // MARK: - OTLP
 
         .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.0.0"),
-        .package(url: "https://github.com/grpc/grpc-swift.git", from: "1.0.0"),
+        .package(url: "https://github.com/grpc/grpc-swift.git", branch: "release/1.x"),
         .package(url: "https://github.com/apple/swift-nio-http2.git", from: "1.23.1"),
 
         // MARK: - Plugins
