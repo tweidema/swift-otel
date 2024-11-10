@@ -23,9 +23,9 @@ let package = Package(
 
         // MARK: - OTLP
 
-        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.0.0"),
-        .package(url: "https://github.com/grpc/grpc-swift.git", branch: "release/1.x"),
-        .package(url: "https://github.com/apple/swift-nio-http2.git", from: "1.23.1"),
+        .package(url: "https://github.com/grpc/grpc-swift.git", from: "2.0.0-alpha.1"),
+        .package(url: "https://github.com/grpc/grpc-swift-nio-transport.git", from: "1.0.0-alpha.1"),
+        .package(url: "https://github.com/grpc/grpc-swift-protobuf.git", from: "1.0.0-alpha.1"),
 
         // MARK: - Plugins
 
@@ -72,7 +72,7 @@ let package = Package(
             name: "OTLPCore",
             dependencies: [
                 .target(name: "OTel"),
-                .product(name: "SwiftProtobuf", package: "swift-protobuf"),
+                .product(name: "GRPCProtobuf", package: "grpc-swift-protobuf"),
             ],
             swiftSettings: sharedSwiftSettings
         ),
@@ -92,9 +92,9 @@ let package = Package(
                 .target(name: "OTLPCore"),
                 .product(name: "Logging", package: "swift-log"),
                 .product(name: "Tracing", package: "swift-distributed-tracing"),
-                .product(name: "SwiftProtobuf", package: "swift-protobuf"),
-                .product(name: "GRPC", package: "grpc-swift"),
-                .product(name: "NIOHTTP2", package: "swift-nio-http2"),
+                .product(name: "GRPCProtobuf", package: "grpc-swift-protobuf"),
+                .product(name: "GRPCCore", package: "grpc-swift"),
+                .product(name: "GRPCNIOTransportHTTP2", package: "grpc-swift-nio-transport"),
                 .product(name: "W3CTraceContext", package: "swift-w3c-trace-context"),
             ],
             swiftSettings: sharedSwiftSettings
