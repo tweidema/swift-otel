@@ -11,11 +11,11 @@
 //
 //===----------------------------------------------------------------------===//
 
-import GRPC
+import GRPCCore
 import Logging
 import NIO
 import NIOHPACK
-import NIOSSL
+import GRPCNIOTransportHTTP2
 import OTel
 import OTLPCore
 
